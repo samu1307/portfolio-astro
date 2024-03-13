@@ -1,0 +1,35 @@
+---
+import Tittle from "./Tittle.astro";
+import Github from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+---
+
+<section
+    class="w-[46ch] h-full p-14 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon"
+>
+    <Tittle />
+    <a
+        href="#aboutMe"
+        id="btnAboutMe"
+        class="w-[12rem] h-10 relative mt-8 mb-4 tracking-[.2rem] p-[.2rem_.2rem_.2rem_1rem] font-Inconsolata font-[700] flex flex-row justify-between items-center text-blue-neon border border-blue-neon rounded-lg"
+    >
+        Conoceme
+        <span
+            class="w-9 aspect-square absolute top-1 right-1 rounded-lg bg-blue-neon flex justify-center items-center"
+        >
+            <i class="las la-arrow-right text-white translate-x-[.1rem]"></i>
+        </span>
+    </a>
+    <a
+        href="#"
+        class="text-4xl cursor-pointer mr-2 aspect-square text-blue-neon hover:scale-90 transition-[scale] duration-200"
+    >
+        <Github class="size-7"/>
+    </a>
+    <a
+        href="#"
+        class="text-4xl cursor-pointer aspect-square text-blue-neon hover:scale-[.5] transition-[scale] duration-200"
+    >
+        <Linkedin class="size-7"/>
+    </a>
+</section>
