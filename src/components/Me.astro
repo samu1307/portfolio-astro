@@ -1,0 +1,60 @@
+---
+import ArrowNext from "./icons/ArrowNext.astro";
+---
+
+<picture
+    class="w-fit h-fit rounded-3xl shadow-[0_5px_0] border-2 overflow-hidden relative bg-blue-neon shadow-blue-neon border-blue-neon"
+>
+    <div
+        class="infoCard w-full px-8 py-4 transition-transform duration-300 ease-in-out bg-blue-neon absolute top-0 left-0 -translate-y-[100%]"
+    >
+        <ul class="w-full text-white flex flex-col gap-3">
+            <li>
+                <p>
+                    <b>Nombre:</b><br />Samuel Sarmiento Rivas
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Edad:</b><br />18 años
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Origen:</b><br />Bogotá, Colombia
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Profesión:</b>
+                    <br />Programador de software, Músico, Diseñador
+                </p> 
+            </li>
+            <li>
+                <p>
+                    <b>Correo:</b><br />rivassamuel.ssr&#64;gmail.com
+                </p>
+            </li>
+        </ul>
+    </div>
+    <button
+        class="size-14 rounded-b-full grid place-content-center absolute top-0 left-0 right-0 mx-auto -translate-y-[60%] transition-[translate_.3s,padding_.3s] bg-blue-neon"
+    >
+        <ArrowNext class="size-7 rotate-90 text-alice-blue translate-y-3 transition-[translate_.3s]"/>
+    </button>
+    <img src="photo.avif" alt="Foto de Samuel Sarmiento" />
+</picture>
+
+<style>
+
+    button{
+        &:hover{
+            @apply -translate-y-[40%] pb-3;
+            
+            svg{
+                @apply scale-125;
+            }
+        }
+    }
+
+</style>
