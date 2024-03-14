@@ -1,0 +1,35 @@
+---
+type job = {
+    skill: string,
+    description: string
+}
+
+interface Props {
+    class: string,
+    url: string,
+    job: job
+}
+
+const { class: className, url, job: { skill, description } } = Astro.props;
+---
+
+<article
+    class:list={[className, "w-full h-full flex flex-row items-center justify-between rounded-lg shadow-current border-[2px] border-current"]}
+>
+    <picture class="w-[60%] flex justify-center items-center">
+        <img
+            class={"w-auto h-[90%] drop-shadow-[0_0_10px_#000000a6]"}
+            src={url}
+            alt={"Imagen sobre " + skill}
+        />
+    </picture>
+    <div class="w-[40%] pr-20">
+        <h3
+            style="-webkit-text-fill-color: #191919;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: currentColor;"
+            class="font-Inconsolata translate-x-1 font-bold text-6xl drop-shadow-[-2px_2px_0px_currentColor]"
+        >
+            {skill}
+        </h3>
+        <p class="font-kanit text-lg text-alice-blue">{description}</p>
+    </div>
+</article>
