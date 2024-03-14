@@ -8,17 +8,17 @@ import Me from "../components/Me.tsx";
 
 const music = {
   skill: "Musico",
-  description: ""
+  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
 }
 
 const design = {
   skill: "Diseñador",
-  description: ""
+  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
 }
 
 const dev = {
-  skill: "Programador",
-  description: ""
+  skill: "Dev",
+  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
 }
 
 ---
@@ -32,9 +32,9 @@ const dev = {
       <Me client:load />
     </section>
 
-    <section class="w-full sticky h-[300vh] bg-eerie-black">
+    <section class="w-full h-[300vh] bg-eerie-black">
       <main class="w-full h-[90vh] py-12 px-10 overflow-hidden sticky top-0 left-0">
-        <section class="scrollContainer w-[500vh] h-full flex gap-14">
+        <section class="scrollContainer w-[380vh] h-full flex items-center gap-[40vw] justify-evenly">
 
           <CardAboutMe class="text-flax" url="note.png" job={music}/>
           <CardAboutMe class="text-bitter-sweet" url="design.png" job={design}/>

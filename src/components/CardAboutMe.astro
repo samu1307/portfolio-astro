@@ -14,7 +14,7 @@ const { class: className, url, job: { skill, description } } = Astro.props;
 ---
 
 <article
-    class:list={[className, "w-full h-full flex flex-row items-center justify-between rounded-lg shadow-current border-[2px] border-current"]}
+    class:list={[className, "p-10 size-fit flex flex-col items-center rounded-lg shadow-current border-[2px] border-current"]}
 >
     <picture class="w-[60%] flex justify-center items-center">
         <img
@@ -23,13 +23,13 @@ const { class: className, url, job: { skill, description } } = Astro.props;
             alt={"Imagen sobre " + skill}
         />
     </picture>
-    <div class="w-[40%] pr-20">
+    <div class="mt-10">
         <h3
             style="-webkit-text-fill-color: #191919;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: currentColor;"
-            class="font-Inconsolata translate-x-1 font-bold text-6xl drop-shadow-[-2px_2px_0px_currentColor]"
+            class="translate-x-1 font-bold text-6xl drop-shadow-[-2px_2px_0px_currentColor]"
         >
             {skill}
         </h3>
-        <p class="font-kanit text-lg text-alice-blue">{description}</p>
+        <p class="text-lg mt-3 leading-6 text-alice-blue max-w-[30ch]">{description}</p>
     </div>
 </article>
