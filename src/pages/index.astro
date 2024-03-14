@@ -1,131 +1,64 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Home from "../components/icons/Home.astro";
 import Nav from "../components/Nav.astro";
 import CardInfo from "../components/CardInfo.astro";
-import Me from "../components/Me.astro";
-import Grid from "../components/icons/Grid.astro";
-import CloseBold from "../components/icons/CloseBold.astro";
+import CardAboutMe from "../components/CardAboutMe.astro";
+import Proyects from "../components/Proyects.astro";
+import Me from "../components/Me.tsx";
+
+const music = {
+  skill: "Musico",
+  description: ""
+}
+
+const design = {
+  skill: "Diseñador",
+  description: ""
+}
+
+const dev = {
+  skill: "Programador",
+  description: ""
+}
+
 ---
 
 <Layout title="Samuel Sarmiento - PORTFOLIO">
-  <!-- <app-nav class="relative z-100"></app-nav> -->
-  <!-- <div
-    class="container w-14 p-2 fixed right-6 bottom-6 transition-all duration-500 z-50"
-  >
-    <div
-      class="overflow-y-clip h-0 transition-all duration-500 opacity-0"
-      [ngClass]="{'menuActive': hMenu}"
-    >
-      <button class="btn-nav secBtnMenuActive">
-        <Home class="size-5"/>
-        <p>Inicio</p>
-      </button>
-      <button class="btn-nav mt-2">
-        <i class="las la-suitcase"></i>
-        <p>Sobre mi</p>
-      </button>
-      <button class="btn-nav mt-2">
-        <i class="las la-recycle"></i>
-        <p>Habilidades</p>
-      </button>
-    </div>
-    <button
-      (click)="menuAction()"
-      [ngClass]="{'btnMenuActive': aBtnMenu}"
-      class="btn-nav p-1 transition-all duration-500"
-    > 
-    <button
-      class="btn-nav p-1 transition-all duration-500"
-    >
-      <Grid class="size-5"/>
-      <CloseBold class="size-5 hidden opacity-0"/>
-    </button>
-  </div> -->
+  <Nav />
 
-
-    <Nav/>
-    
-    <main class="px-20">
-      <section class="flex flex-row justify-between items-center">
-        <CardInfo/>
-        <Me/>
-      </section>
-    </main>
-
-  <!-- <main>
-    <section class="w-screen h-[300vh] bg-eerie-black">
-      <div
-        id="aboutMe"
-        class="w-full h-[90vh] py-12 px-10 overflow-hidden sticky top-0 left-0"
-      >
-        <div
-          class="scrollContainer w-[500vh] h-full grid grid-cols-[repeat(3,minmax(75vw,1fr))] grid-rows-[minmax(0,100%)] gap-14"
-        >
-          <picture class="w-[60%] flex justify-center items-center">
-            <img
-              [ngStyle]="{'color': color}"
-              class="w-auto h-[90%] drop-shadow-[0_0_10px_#000000a6]"
-              [src]="url"
-              [alt]="alt"
-            />
-          </picture>
-          <div class="w-[40%] pr-20">
-            <h3
-              [ngStyle]="{'color': color}"
-              style="-webkit-text-fill-color: #191919;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: currentColor;"
-              class="font-Inconsolata translate-x-1 font-bold text-6xl drop-shadow-[-2px_2px_0px_currentColor]"
-            >
-            </h3>
-            <p class="font-kanit text-lg text-alice-blue"></p>
-          </div>
-
-          <app-about-me
-            id="music"
-            [url]="'../../../assets/img/note.png'"
-            [alt]="'Imagen de nota musical'"
-            [color]="'#EDD382'"
-            [tittle]="'Música'"
-            [descrip]="descri"
-            class="w-full h-full flex flex-row items-center justify-between shadow-[0_5px_0] shadow-flax border-[2px] border-flax rounded-lg"
-          >
-          </app-about-me>
-
-          <app-about-me
-            id="design"
-            [url]="'../../../assets/img/design.png'"
-            [alt]="'Imagen de ilustración de diseño'"
-            [color]="'#E87461'"
-            [tittle]="'Diseño'"
-            [descrip]="descri"
-            class="w-full h-full flex flex-row items-center justify-between shadow-[0_5px_0] shadow-bitter-sweet border-[2px] border-bitter-sweet rounded-lg"
-          >
-          </app-about-me>
-
-          <app-about-me
-            id="code"
-            [url]="'../../../assets/img/code.png'"
-            [alt]="'Imagen de icono de programador'"
-            [color]="'#275DAD'"
-            [tittle]="'Codigo'"
-            [descrip]="descri"
-            class="w-full h-full flex flex-row items-center justify-between shadow-[0_5px_0] shadow-blue-neon border-[2px] border-blue-neon rounded-lg"
-          >
-          </app-about-me>
-        </div>
-      </div>
+  <main class="">
+    <section class="px-20 mb-10 flex flex-row justify-around items-center">
+      <CardInfo />
+      <Me client:load />
     </section>
-    <section id="proyects">
-      <app-proyects
-        class="w-screen flex items-center flex-col overflow-x-hidden overflow-y-scroll"
-      ></app-proyects>
+
+    <section class="w-full sticky h-[300vh] bg-eerie-black">
+      <main class="w-full h-[90vh] py-12 px-10 overflow-hidden sticky top-0 left-0">
+        <section class="scrollContainer w-[500vh] h-full flex gap-14">
+
+          <CardAboutMe class="text-flax" url="note.png" job={music}/>
+          <CardAboutMe class="text-bitter-sweet" url="design.png" job={design}/>
+          <CardAboutMe class="text-blue-neon" url="code.png" job={dev}/>
+          
+        </section>
+      </main>
     </section>
     <section>
-      <app-skills
-        class="w-screen h-80 flex items-center bg-eerie-black flex-col overflow-x-hidden overflow-y-scroll"
-      >
-      </app-skills>
+      <Proyects/>
     </section>
-  </main> -->
-
+  </main>
 </Layout>
+
+<style>
+  .scrollContainer {
+    animation: scroll linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 590px;
+  }
+
+  @keyframes scroll {
+    to {
+      translate: -100% 0;
+    }
+  }
+</style>
