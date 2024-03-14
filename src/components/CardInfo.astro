@@ -2,6 +2,7 @@
 import Tittle from "./Tittle.astro";
 import Github from "./icons/Github.astro";
 import Linkedin from "./icons/Linkedin.astro";
+import Arrow from "./icons/Arrow.astro";
 ---
 
 <section
@@ -11,25 +12,47 @@ import Linkedin from "./icons/Linkedin.astro";
     <a
         href="#aboutMe"
         id="btnAboutMe"
-        class="w-[12rem] h-10 relative mt-8 mb-4 tracking-[.2rem] p-[.2rem_.2rem_.2rem_1rem] font-Inconsolata font-[700] flex flex-row justify-between items-center text-blue-neon border border-blue-neon rounded-lg"
+        class="w-fit pl-3 pr-14 py-2 h-fit flex relative mt-8 mb-4 tracking-[.2rem] font-Inconsolata font-bold rounded-lg text-blue-neon border border-blue-neon"
     >
         Conoceme
-        <span
-            class="w-9 aspect-square absolute top-1 right-1 rounded-lg bg-blue-neon flex justify-center items-center"
-        >
-            <i class="las la-arrow-right text-white translate-x-[.1rem]"></i>
+        <span class="size-9 absolute top-1 right-1 rounded-lg grid place-content-center bg-blue-neon">
+            <Arrow class="size-7 text-white" />
         </span>
     </a>
-    <a
-        href="#"
-        class="text-4xl cursor-pointer mr-2 aspect-square text-blue-neon hover:scale-90 transition-[scale] duration-200"
-    >
-        <Github class="size-7"/>
-    </a>
-    <a
-        href="#"
-        class="text-4xl cursor-pointer aspect-square text-blue-neon hover:scale-[.5] transition-[scale] duration-200"
-    >
-        <Linkedin class="size-7"/>
-    </a>
+    <footer>
+        <a href="#">
+            <Github class="size-8" />
+        </a>
+        <a href="#">
+            <Linkedin class="size-7" />
+        </a>
+    </footer>
 </section>
+
+<style>
+    #btnAboutMe {
+        @apply shadow-[-3px_3px_0_2px_currentColor] translate-x-1 -translate-y-1 transition-[all_0.3s_ease-in-out_0.2s];
+    
+        span{
+            @apply h-[calc(100%_-_0.5rem)] transition-[all_0.2s_ease-in-out_0s];
+        }
+        
+        &:hover{
+            @apply shadow-none transition-[all_0.3s_ease-in-out_0s] translate-x-0;
+            
+            span{
+                @apply top-0 right-0 h-10 w-full transition-[all_0.2s_ease-in-out_0.2s];
+            }
+        }
+    }
+
+    footer{ 
+        @apply flex flex-row gap-2;
+        a{
+            @apply text-blue-neon;
+            &:hover{
+                @apply scale-110;
+            }
+        }
+    }
+</style>
