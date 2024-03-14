@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Home from "../components/icons/Home.astro";
 import Nav from "../components/Nav.astro";
 import CardInfo from "../components/CardInfo.astro";
+import Me from "../components/Me.astro";
 import Grid from "../components/icons/Grid.astro";
 import CloseBold from "../components/icons/CloseBold.astro";
 ---
@@ -42,20 +43,17 @@ import CloseBold from "../components/icons/CloseBold.astro";
     </button>
   </div> -->
 
-  <!-- <app-main class="w-screen h-screen overflow-x-hidden overflow-y-scroll"></app-main> -->
 
     <Nav/>
     
-    <CardInfo/>
+    <main class="px-20">
+      <section class="flex flex-row justify-between items-center">
+        <CardInfo/>
+        <Me/>
+      </section>
+    </main>
 
-
-    <!-- 
-        <app-card-info-main
-            class="h-full relative flex col-[1] row-[2] items-center"
-        ></app-card-info-main>
-    -->
-
-  <main>
+  <!-- <main>
     <section class="w-screen h-[300vh] bg-eerie-black">
       <div
         id="aboutMe"
@@ -82,7 +80,7 @@ import CloseBold from "../components/icons/CloseBold.astro";
             <p class="font-kanit text-lg text-alice-blue"></p>
           </div>
 
-          <!-- <app-about-me
+          <app-about-me
             id="music"
             [url]="'../../../assets/img/note.png'"
             [alt]="'Imagen de nota musical'"
@@ -113,7 +111,7 @@ import CloseBold from "../components/icons/CloseBold.astro";
             [descrip]="descri"
             class="w-full h-full flex flex-row items-center justify-between shadow-[0_5px_0] shadow-blue-neon border-[2px] border-blue-neon rounded-lg"
           >
-          </app-about-me> -->
+          </app-about-me>
         </div>
       </div>
     </section>
@@ -128,6 +126,6 @@ import CloseBold from "../components/icons/CloseBold.astro";
       >
       </app-skills>
     </section>
-  </main>
+  </main> -->
 
 </Layout>
