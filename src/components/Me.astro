@@ -28,7 +28,7 @@ import ArrowNext from "./icons/ArrowNext.astro";
                 <p>
                     <b>Profesión:</b>
                     <br />Programador de software, Músico, Diseñador
-                </p> 
+                </p>
             </li>
             <li>
                 <p>
@@ -40,21 +40,19 @@ import ArrowNext from "./icons/ArrowNext.astro";
     <button
         class="size-14 rounded-b-full grid place-content-center absolute top-0 left-0 right-0 mx-auto -translate-y-[60%] transition-[translate_.3s,padding_.3s] bg-blue-neon"
     >
-        <ArrowNext class="size-7 rotate-90 text-alice-blue translate-y-3 transition-[translate_.3s]"/>
+        <ArrowNext
+            class="size-7 rotate-90 text-alice-blue translate-y-3 transition-[translate_.3s]"
+        />
     </button>
     <img src="photo.avif" alt="Foto de Samuel Sarmiento" />
 </picture>
 
 <style>
+    button:hover {
+        @apply -translate-y-[40%] pb-3;
 
-    button{
-        &:hover{
-            @apply -translate-y-[40%] pb-3;
-            
-            svg{
-                @apply scale-125;
-            }
+        svg {
+            @apply scale-125;
         }
     }
-
 </style>
