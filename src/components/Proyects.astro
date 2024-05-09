@@ -1,31 +1,79 @@
-<div
-    class="w-full py-14 px-28 grid grid-cols-3 grid-rows-[repeat(5,minmax(120px,2fr))] gap-10 [&>picture]:rounded-xl [&>picture]:bg-blue-neon [&>picture>img]:w-full [&>picture>img]:h-full [&>picture>img]:border-2 [&>picture>img]:border-blue-neon [&>picture>img]:bg-white [&>picture>img]:rounded-lg [&>picture>img]:-translate-x-4 [&>picture>img]:-translate-y-4"
+---
+import ProyectCard from "./ProyectCard.astro";
+import Html from "./svg/HtmlSVG.astro";
+import Css from "./svg/CssSVG.astro";
+import JS from "./svg/JavaScriptSVG.astro";
+import React from "./svg/ReactSVG.astro";
+import Tailwind from "./svg/TailwindSVG.astro";
+import Node from "./svg/NodeSVG.astro";
+import AstroIcon from "./svg/AstroSVG.astro";
+import Php from "./svg/PhpSVG.astro";
+---
+
+<article
+    class="w-full h-fit py-8 px-8 grid grid-cols-3 grid-rows-[repeat(4,minmax(120px,2fr))] gap-5 [&>picture]:rounded-xl [&>picture]:bg-blue-neon [&>picture>img]:w-full [&>picture>img]:h-full [&>picture>img]:border-2 [&>picture>img]:border-blue-neon [&>picture>img]:bg-white [&>picture>img]:rounded-lg [&>picture>img]:-translate-x-4 [&>picture>img]:-translate-y-4"
 >
-    <picture class="col-span-1 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-2 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-1 row-span-2">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-1 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-1 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-2 row-span-2">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-1 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-2 row-span-1">
-        <img src="" alt="" />
-    </picture>
-    <picture class="col-span-1 row-span-1">
-        <img src="" alt="" />
-    </picture>
-</div>
+    <ProyectCard
+        tittle="RUU | Control de refigerios"
+        description="Sistema de información para el manejo y control de los distintos refrigerios que llegan al colegio Rafael Uribe Uribe"
+        pathImg="photo.avif"
+        class="col-span-2 row-span-2"
+    >
+        <li><Html class="size-6" /></li>
+        <li><Css class="size-6" /></li>
+        <li><JS class="size-6" /></li>
+        <li><React class="size-6" /></li>
+        <li><Node class="size-6" /></li>
+        <li><AstroIcon class="size-6" /></li>
+        <li><Tailwind class="size-6" /></li>
+        <li><Php class="size-6" /></li>
+    </ProyectCard>
+
+    <ProyectCard
+        tittle="Edit.code"
+        description="Editor de codigo web online con diversas funcionalidades"
+        pathImg="photo.avif"
+        class="col-start-3 col-end-3 row-span-2"
+    >
+        <li><Html class="size-6" /></li>
+        <li><Css class="size-6" /></li>
+        <li><JS class="size-6" /></li>
+        <li><React class="size-6" /></li>
+        <li><Node class="size-6" /></li>
+        <li><AstroIcon class="size-6" /></li>
+        <li><Tailwind class="size-6" /></li>
+        <li><Php class="size-6" /></li>
+    </ProyectCard>
+
+    <ProyectCard
+        tittle="Calculadora"
+        description="Calculadora en linea"
+        pathImg="photo.avif"
+        class="col-start-1 col-end-2 row-span-2"
+    >
+        <li><Html class="size-6" /></li>
+        <li><Css class="size-6" /></li>
+        <li><JS class="size-6" /></li>
+        <li><React class="size-6" /></li>
+        <li><Node class="size-6" /></li>
+        <li><AstroIcon class="size-6" /></li>
+        <li><Tailwind class="size-6" /></li>
+        <li><Php class="size-6" /></li>
+    </ProyectCard>
+
+    <ProyectCard
+        tittle="Triqui Neón"
+        description="Triqui o tres en raya online neon."
+        pathImg="photo.avif"
+        class="col-start-2 col-end-4 row-span-2"
+    >
+        <li><Html class="size-6" /></li>
+        <li><Css class="size-6" /></li>
+        <li><JS class="size-6" /></li>
+        <li><React class="size-6" /></li>
+        <li><Node class="size-6" /></li>
+        <li><AstroIcon class="size-6" /></li>
+        <li><Tailwind class="size-6" /></li>
+        <li><Php class="size-6" /></li>
+    </ProyectCard>
+</article>

@@ -32,9 +32,9 @@ const dev = {
       <Me client:load />
     </section>
 
-    <section class="w-full h-[60vh] overflow-x-auto bg-eerie-black">
-      <main class="w-full h-[300vh] py-12 px-10 overflow-hidden sticky top-0 left-0">
-        <section class="scrollContainer w-[380vh] h-[60vh] flex items-center gap-[40vw] justify-evenly">
+    <section id="aboutMe"class="w-full h-[500px] -z-20 bg-eerie-black">
+      <main class="w-full h-[90vh] py-7 px-4 overflow-hidden sticky top-0 left-0">
+        <section class="scrollContainer w-fit h-[calc(500px_-_3.5rem)] flex items-center gap-16">
 
           <CardAboutMe class="text-flax" url="note.png" job={music}/>
           <CardAboutMe class="text-bitter-sweet" url="design.png" job={design}/>
@@ -43,7 +43,7 @@ const dev = {
         </section>
       </main>
     </section>
-    <section>
+    <section id="proyects">
       <Proyects/>
     </section>
   </main>
@@ -53,12 +53,12 @@ const dev = {
   .scrollContainer {
     animation: scroll linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0px;
+    animation-range: 75vh 95vh;
   }
 
   @keyframes scroll {
     to {
-      translate: -100% 0;
+      translate: -18% 0;
     }
   }
 </style>

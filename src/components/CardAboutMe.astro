@@ -14,22 +14,22 @@ const { class: className, url, job: { skill, description } } = Astro.props;
 ---
 
 <article
-    class:list={[className, "p-10 size-fit flex flex-col items-center rounded-lg shadow-current border-[2px] border-current"]}
+    class:list={[className, "max-w-min h-full p-5 flex flex-col items-center rounded-lg shadow-current border-[2px] border-current"]}
 >
-    <picture class="w-[60%] flex justify-center items-center">
+    <picture class="size-fit grid place-content-center">
         <img
-            class={"w-auto h-[90%] drop-shadow-[0_0_10px_#000000a6]"}
+            class={"w-40 drop-shadow-[0_0_10px_#000000a6]"}
             src={url}
             alt={"Imagen sobre " + skill}
         />
     </picture>
-    <div class="mt-10">
+    <div class="mt-5">
         <h3
             style="-webkit-text-fill-color: #191919;-webkit-text-stroke-width: 1px; -webkit-text-stroke-color: currentColor;"
-            class="translate-x-1 font-bold text-6xl drop-shadow-[-2px_2px_0px_currentColor]"
+            class="translate-x-1 font-bold text-4xl drop-shadow-[-2px_2px_0px_currentColor]"
         >
             {skill}
         </h3>
-        <p class="text-lg mt-3 leading-6 text-alice-blue max-w-[30ch]">{description}</p>
+        <p class="text-lg mt-3 leading-6 text-alice-blue min-w-[40ch]">{description}</p>
     </div>
 </article>

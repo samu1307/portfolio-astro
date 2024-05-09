@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import ArrowNext from "./icons/ArrowNext.astro";
 
 const UserInfoCard: React.FC = () => {
 
@@ -36,7 +35,7 @@ const UserInfoCard: React.FC = () => {
                 </ul>
                 <button onClick={openInfo} className={`${isOpen ? "translate-y-[100%]" : "-translate-y-[50%]"} size-14 rounded-b-full grid place-content-center translate-y-[calc(50%_+_1rem)] transition-[translate_.3s,padding_.3s] hover:translate-y-[calc(60%_+_1rem)] hover:pb-1 bg-blue-neon`}>
                     <svg
-                        className={`${isOpen ? "-rotate-90" : "rotate-90"} size-7 rotate-90 translate-y-[40%] transition-[translate_.3s] text-alice-blue`}
+                        className={`${isOpen ? "-rotate-90" : "rotate-90"} size-7 translate-y-[40%] transition-[translate_.3s] text-alice-blue`}
                         width="800px"
                         height="800px"
                         viewBox="0 0 24 24"
@@ -49,7 +48,7 @@ const UserInfoCard: React.FC = () => {
                     </svg>
                 </button>
             </div>
-            <img src="photo.avif" alt="Foto de Samuel Sarmiento" />
+            <img className="aspect-square" src="photo.avif" alt="Foto de Samuel Sarmiento" />
         </div>
     );
 };

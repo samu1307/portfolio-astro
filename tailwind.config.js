@@ -11,8 +11,9 @@ export default {
         "alice-blue": "#EBF2FA",
       },
       fontFamily: {
-        Inconsolata: "Inconsolata",
-        kanit: "Kanit",
+        Inconsolata: "'Inconsolata Variable', sans-serif",
+        Onest: "'Onest Variable', sans-serif",
+        Kanit: "'Kanit', sans-serif",
       },
       dropShadow: {
         "text-neon": "0 0 3px currentColor",

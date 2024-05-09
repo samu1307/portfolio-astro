@@ -1,0 +1,85 @@
+---
+import ArrowFrom from './icons/ArrowFrom.astro'
+import Github from './icons/Github.astro'
+
+interface Props {
+    class: string,
+    tittle: string,
+    description: string,
+    pathImg: string
+}
+
+const { class: className, tittle, description: des, pathImg} = Astro.props
+---
+
+<section class:list={[className + " " + "p-3 flex flex-col justify-between relative border border-black rounded-lg overflow-hidden"]}>
+    <header class="relative z-10">
+        <h3 class="mb-2 text-lg font-bold text-blue-neon">{tittle}</h3>
+        <p class="w-[20ch] leading-5">{des}</p>
+    </header>
+    <picture class="size-fit absolute inset-0">
+        <img class="rounded-lg" src={pathImg} alt="">
+    </picture>
+    <footer class="w-full flex flex-row flex-wrap gap-2 justify-between items-center relative z-10">
+        <ul class="flex flex-row gap-1">
+            <slot/>
+        </ul>
+        <div class="flex flex-row gap-2">
+            <a href="#">
+                <span>Code</span>
+                <Github/>
+            </a>
+            <a href="#">
+                <span>Visitar</span>
+                <ArrowFrom/>
+            </a>
+        </div>
+    </footer>
+</section>
+
+<style>
+
+    section:hover{
+        picture{
+            transform: skew(0deg) translate(70%,10%) rotate(0deg);
+        }
+    }
+
+    ul{
+        svg:hover{
+            @apply scale-110;
+        }
+    }
+
+    picture{
+        transition: transform .4s ease-in-out;
+        transform: skew(35deg) translate(90%,20%) rotate(-22deg);
+    }
+
+    div{
+        a{
+            @apply w-fit px-4 py-1 backdrop-blur-lg relative overflow-hidden flex items-center flex-row gap-2 border border-blue-neon rounded-lg;
+            
+            span, svg{ z-index: 10; }
+            
+            svg{
+                @apply size-4 text-blue-neon;
+            }
+
+            &::after{
+                content: "";
+                @apply absolute left-0 bottom-0 translate-y-full size-full bg-blue-neon; 
+            }
+
+            &:hover{
+                span, svg{
+                    @apply text-white;
+                }
+
+                &::after{
+                @apply translate-y-0; 
+            }
+            }
+        }
+    }
+</style>
