@@ -9,6 +9,11 @@ export default {
         "bitter-sweet": "#E87461",
         "blue-neon": "#275DAD",
         "alice-blue": "#EBF2FA",
+        "blue-triqui": "#635994",
+        "red-triqui": "#f92f60",
+        "red-calculator": "#DB162F",
+        "violet-calculator": "#383961",
+				'yellow-calculator': '#DBDFAC',
       },
       fontFamily: {
         Inconsolata: "'Inconsolata Variable', sans-serif",

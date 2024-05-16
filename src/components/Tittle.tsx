@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Tittle = () => {
   const words = ['Programador', 'Musico'];
@@ -10,6 +10,11 @@ const Tittle = () => {
     return new Promise(resolve => setTimeout(resolve, time))
   }
 
+  const textRef = useRef(text);
+
+  useEffect(() => {
+    textRef.current = text;
+  }, [text]);
 
   useEffect(() => {
 
@@ -21,11 +26,15 @@ const Tittle = () => {
       } else {
         clearInterval(idInterval)
         setTimeout(() => {
-          setText('')
-          setMargin(!margin)
-          console.log(margin)
-          setCurrentWordIndex(prev => (prev + 1) % words.length)
-        }, 4000)
+          const deleteInterval = setInterval(() => {
+            setText(prevText => prevText.slice(0, -1));
+            if (textRef.current.length === 0) {
+              clearInterval(deleteInterval);
+              setMargin(!margin);
+              setCurrentWordIndex(prev => (prev + 1) % words.length);
+            }
+          }, 100);
+        }, 5000);
       }
 
     }, 150)
@@ -36,9 +45,9 @@ const Tittle = () => {
 
   return (
     <div className=''>
-      <h1 className='font-Kanit text-blue-neon text-4xl'>{text} <span className='text-eerie-black'>|</span></h1>
+      <h1 className='font-Kanit text-blue-neon text-4xl'>{text}<span className='text-eerie-black'>|</span></h1>
       <section className='mt-3 leading-5 overflow-hidden'>
-        <p className={`${margin ? '-translate-x-[50.5%]' : 'translate-x-0'} transition-transform duration-500 delay-150 w-[200%] flex flex-row `}>
+        <p className={`${margin ? '-translate-x-[50.5%]' : 'translate-x-0'} transition-transform duration-700 ease-in-out delay-150 w-[200%] flex flex-row `}>
           <span className='w-max mr-3'>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea sunt eius impedit maiores
             sint quo beatae a, qui doloribus molestias soluta dignissimos ullam accusamus cum excepturi?

@@ -1,84 +1,121 @@
 ---
-import ArrowFrom from './icons/ArrowFrom.astro'
-import Github from './icons/Github.astro'
+import ArrowFrom from "./icons/ArrowFrom.astro";
+import Github from "./icons/Github.astro";
 
 interface Props {
-    class: string,
-    tittle: string,
-    description: string,
-    pathImg: string
+    class: string;
+    tittle: string;
+    description: string;
+    pathImg: string;
+    primaryBtn: string;
+    secondBtn: string;
 }
 
-const { class: className, tittle, description: des, pathImg} = Astro.props
+const {
+    class: className,
+    tittle,
+    description: des,
+    pathImg,
+    primaryBtn,
+    secondBtn
+} = Astro.props;
 ---
 
-<section class:list={[className + " " + "p-3 flex flex-col justify-between relative border border-black rounded-lg overflow-hidden"]}>
+<section
+    class:list={[
+        className +
+            " p-3 flex flex-col justify-between relative border border-black rounded-lg overflow-hidden",
+    ]}
+>
     <header class="relative z-10">
-        <h3 class="mb-2 text-lg font-bold text-blue-neon">{tittle}</h3>
+        <h3 class="mb-2 text-lg font-bold">
+            {tittle}
+        </h3>
         <p class="w-[20ch] leading-5">{des}</p>
     </header>
-    <picture class="size-fit absolute inset-0">
-        <img class="rounded-lg" src={pathImg} alt="">
+    <picture class="w-full absolute inset-0">
+        <img class="w-full rounded-lg" src={pathImg} alt="" />
     </picture>
-    <footer class="w-full flex flex-row flex-wrap gap-2 justify-between items-center relative z-10">
+    <footer
+        class="w-full flex flex-row flex-wrap gap-2 justify-between items-center relative z-10"
+    >
         <ul class="flex flex-row gap-1">
-            <slot/>
+            <slot />
         </ul>
         <div class="flex flex-row gap-2">
-            <a href="#">
+            <a class:list={[primaryBtn]} href="#">
                 <span>Code</span>
-                <Github/>
+                <Github />
             </a>
-            <a href="#">
+            <a class:list={[secondBtn]} href="#">
                 <span>Visitar</span>
-                <ArrowFrom/>
+                <ArrowFrom />
             </a>
         </div>
     </footer>
 </section>
 
 <style>
-
-    section:hover{
-        picture{
-            transform: skew(0deg) translate(70%,10%) rotate(0deg);
+    section {
+        header,
+        footer > ul {
+            transition: opacity 0.5s ease-in-out;
+        }
+        &:hover {
+            header,
+            footer > ul {
+                opacity: 0;
+            }
+            picture {
+                transform: skew(0deg) translate(0, 0);
+            }
         }
     }
 
-    ul{
-        svg:hover{
+    ul {
+        svg:hover {
             @apply scale-110;
         }
     }
 
-    picture{
-        transition: transform .4s ease-in-out;
-        transform: skew(35deg) translate(90%,20%) rotate(-22deg);
+    picture {
+        transition:
+        transform 0.4s ease-in-out,
+        width 0.4s ease-in-out,
+        box-shadow .4s ease-in-out;
+        transform: skew(30deg, -10deg) scaleY(.5)  translate(40%, 10%);
+        img{
+            filter: drop-shadow(-60px 140px 30px rgba(0, 0, 0, 0.4));
+        }
     }
 
-    div{
-        a{
-            @apply w-fit px-4 py-1 backdrop-blur-lg relative overflow-hidden flex items-center flex-row gap-2 border border-blue-neon rounded-lg;
-            
-            span, svg{ z-index: 10; }
-            
-            svg{
-                @apply size-4 text-blue-neon;
+    div {
+        a {
+            @apply w-fit px-4 py-1 backdrop-blur-sm relative overflow-hidden flex items-center shadow-[0_0_10px] flex-row gap-2 border border-current rounded-lg;
+
+            span,
+            svg {
+                @apply z-10 text-white; 
             }
 
-            &::after{
+            svg {
+                @apply size-4;
+            }
+
+            &::after {
                 content: "";
-                @apply absolute left-0 bottom-0 translate-y-full size-full bg-blue-neon; 
+                @apply absolute left-0 bottom-0 translate-y-0 size-full bg-current;
             }
 
-            &:hover{
-                span, svg{
-                    @apply text-white;
+            &:hover {
+                span,
+                svg {
+                    @apply text-current; 
                 }
 
-                &::after{
-                @apply translate-y-0; 
-            }
+                &::after {
+                    @apply translate-y-full;
+                }
             }
         }
     }

@@ -6,19 +6,20 @@ import Arrow from "./icons/Arrow.astro";
 ---
 
 <section
-    class="w-[40ch] h-full p-14 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon"
+    class="w-[40ch] h-full z-10 p-14 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon relative"
 >
-    <Tittle client:load/>
-    <a
-        href="#aboutMe"
+    <Tittle client:load />
+    <button
         id="btnAboutMe"
         class="w-fit pl-3 pr-14 py-2 h-fit flex relative mt-8 mb-4 tracking-[.1rem] font-Inconsolata font-bold rounded-lg text-blue-neon border border-blue-neon"
     >
         Contactame
-        <span class="size-9 absolute top-1 right-1 rounded-lg grid place-content-center bg-blue-neon">
+        <span
+            class="size-9 absolute top-1 right-1 rounded-lg grid place-content-center bg-blue-neon"
+        >
             <Arrow class="size-7 text-white" />
         </span>
-    </a>
+    </button>
     <footer>
         <a href="#">
             <Linkedin class="size-7" />
@@ -32,27 +33,33 @@ import Arrow from "./icons/Arrow.astro";
 <style>
     #btnAboutMe {
         @apply shadow-[-3px_3px_0_2px_currentColor] translate-x-1 -translate-y-1 transition-[all_0.3s_ease-in-out_0.2s];
-    
-        span{
+
+        span {
             @apply h-[calc(100%_-_0.5rem)] transition-[all_0.2s_ease-in-out_0s];
         }
-        
-        &:hover{
+
+        &:hover {
             @apply shadow-none transition-[all_0.3s_ease-in-out_0s] translate-x-0;
-            
-            span{
+
+            span {
                 @apply top-0 right-0 h-10 w-full transition-[all_0.2s_ease-in-out_0.2s];
             }
         }
     }
 
-    footer{ 
+    footer {
         @apply flex flex-row gap-2;
-        a{
+        a {
             @apply text-blue-neon;
-            &:hover{
+            &:hover {
                 @apply scale-110;
             }
+        }
+    }
+
+    form{
+        input{
+            @apply w-full px-3 py-2 rounded-lg outline-none;
         }
     }
 </style>
