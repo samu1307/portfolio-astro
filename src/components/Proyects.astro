@@ -8,6 +8,8 @@ import Tailwind from "./svg/TailwindSVG.astro";
 import Node from "./svg/NodeSVG.astro";
 import AstroIcon from "./svg/AstroSVG.astro";
 import Php from "./svg/PhpSVG.astro";
+import SassSVG from "./svg/SassSVG.astro";
+import MySQLSVG from "./svg/MySQLSVG.astro";
 ---
 
 <article
@@ -16,17 +18,17 @@ import Php from "./svg/PhpSVG.astro";
     <ProyectCard
         tittle="RUU | Control de refigerios"
         description="Sistema de información para el manejo y control de los distintos refrigerios que llegan al colegio Rafael Uribe Uribe"
-        pathImg="photo.avif"
+        pathImg="ruu.png"
         class="col-span-2 row-span-2"
+        primaryBtn="text-blue-ruu"
+        secondBtn="text-green-ruu"
     >
         <li><Html class="size-6" /></li>
         <li><Css class="size-6" /></li>
         <li><JS class="size-6" /></li>
-        <li><React class="size-6" /></li>
-        <li><Node class="size-6" /></li>
-        <li><AstroIcon class="size-6" /></li>
-        <li><Tailwind class="size-6" /></li>
         <li><Php class="size-6" /></li>
+        <li><SassSVG class="size-6" /></li>
+        <li><MySQLSVG class="size-6" /></li>
     </ProyectCard>
 
     <ProyectCard
@@ -34,6 +36,8 @@ import Php from "./svg/PhpSVG.astro";
         description="Editor de codigo web online con diversas funcionalidades"
         pathImg="photo.avif"
         class="col-start-3 col-end-3 row-span-2"
+        primaryBtn="text-red-ruu"
+        secondBtn="text-green-ruu"
     >
         <li><Html class="size-6" /></li>
         <li><Css class="size-6" /></li>

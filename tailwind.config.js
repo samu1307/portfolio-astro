@@ -13,7 +13,8 @@ export default {
         "red-triqui": "#f92f60",
         "red-calculator": "#DB162F",
         "violet-calculator": "#383961",
-				'yellow-calculator': '#DBDFAC',
+				'blue-ruu': '#1E222F',
+				'green-ruu': '#4AA163',
       },
       fontFamily: {
         Inconsolata: "'Inconsolata Variable', sans-serif",
