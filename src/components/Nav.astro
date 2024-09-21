@@ -1,27 +1,39 @@
-<header class="py-12 px-20">
+---
+import MenuIcon from "./icons/MenuIcon.astro";
+---
+
+<header class="p-5 lg:py-12 lg:px-20">
     <nav
-        class="px-8 py-3 flex justify-between border-2 rounded-lg shadow-[0px_5px_0] bg-alice-blue border-blue-neon shadow-blue-neon"
+        class="px-8 py-3 relative flex justify-between border-2 rounded-lg shadow-[0px_5px_0] bg-alice-blue border-blue-neon shadow-blue-neon"
     >
         <a href="/" class="font-Kanit font-bold text-xl text-blue-neon">
             SAMUEL✨
         </a>
         <ul
-            class="flex flex-row gap-4 font-kanit font-[300] [&>li]:flex [&>li]:items-center"
+            class="w-full absolute border-2 border-blue-neon shadow-[0px_5px_0] p-7 gap-7 shadow-blue-neon grid grid-cols-2 bg-blue-neon top-16 left-0 rounded-lg z-20 lg:relative lg:flex flex-row lg:gap-4 font-kanit font-[300]"
         >
-            <li class=""><a href="#home">Inicio</a></li>
-            <li class=""><a href="#aboutMe">Sobre mi</a></li>
-            <li class=""><a href="#proyects">Proyectos</a></li>
-            <li class=""><a href="#">Habilidades</a></li>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#aboutMe">Sobre mi</a></li>
+            <li><a href="#proyects">Proyectos</a></li>
+            <li><a href="#">Habilidades</a></li>
         </ul>
+        <button>
+            <MenuIcon class="size-7 text-blue-neon font-bold" />
+        </button>
     </nav>
 </header>
 
 <style>
-    ul a {
-        @apply px-2 rounded-lg border border-transparent font-Onest;
-        
-        &:hover {
-            @apply shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon;
+    ul {
+        li{
+            @apply flex items-center
+        }
+        a {
+            @apply w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue px-2 rounded-lg lg:border lg:border-transparent font-Onest;
+
+            &:hover {
+                @apply shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon;
+            }
         }
     }
 </style>

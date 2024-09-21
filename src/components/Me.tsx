@@ -8,32 +8,33 @@ const UserInfoCard: React.FC = () => {
     const openInfo = () => setIsOpen(!isOpen)
 
     return (
-        <div className="w-fit h-fit rounded-3xl shadow-[0_5px_0] border-2 overflow-hidden relative bg-blue-neon shadow-blue-neon border-blue-neon">
-            <div className={`${isOpen ? "-translate-y-[0]" : "-translate-y-[100%]"} w-full h-fit px-8 py-4 flex flex-col items-center justify-end transition-transform duration-300 ease-in-out absolute top-0 left-0 bg-blue-neon`} >
-                <ul className="w-full text-white flex flex-col gap-3">
+        <div className="h-full rounded-3xl shadow-[0_5px_0] border-2 overflow-hidden relative bg-blue-neon shadow-blue-neon border-blue-neon">
+            <div className={`${isOpen ? "-translate-y-[0]" : "-translate-y-[100%]"} w-full h-fit px-8 pt-6 flex flex-col items-center justify-end transition-transform duration-300 ease-in-out absolute top-0 left-0 bg-blue-neon`} >
+                <ul className="w-full text-alice-blue [&_span]:text-gray-400 flex flex-col gap-3">
                     <li>
                         <p>
-                            <b>Nombre:</b><br />Samuel Sarmiento Rivas
+                            Nombre: <br/> <span>Samuel Sarmiento </span>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <b>Origen:</b><br />Bogotá, Colombia
+                            Profesión:
+                            <br/><span>Programador WEB</span>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <b>Profesión:</b>
-                            <br />Programador de software, Músico
+                            Conocimientos:
+                            <br /><span>Desarrollador Full-Stack con experiencia en tecnologías Front-End</span>
                         </p>
                     </li>
                     <li>
                         <p>
-                            <b>Correo:</b><br />rivassamuel.ssr&#64;gmail.com
+                            Correo:<br /><span>rivassamuel.ssr&#64;gmail.com</span>
                         </p>
                     </li>
                 </ul>
-                <button onClick={openInfo} className={`${isOpen ? "translate-y-[100%]" : "-translate-y-[50%]"} size-14 rounded-b-full grid place-content-center translate-y-[calc(50%_+_1rem)] transition-[translate_.3s,padding_.3s] hover:translate-y-[calc(60%_+_1rem)] hover:pb-1 bg-blue-neon`}>
+                <button onClick={openInfo} className={`${isOpen ? "translate-y-[100%]" : "-translate-y-[50%]"} size-14 rounded-b-full grid place-content-center translate-y-[50%] transition-[translate_.3s,padding_.3s] hover:translate-y-[60%] hover:pb-1 bg-blue-neon`}>
                     <svg
                         className={`${isOpen ? "-rotate-90" : "rotate-90"} size-7 translate-y-[40%] transition-[translate_.3s] text-alice-blue`}
                         width="800px"
@@ -48,7 +49,7 @@ const UserInfoCard: React.FC = () => {
                     </svg>
                 </button>
             </div>
-            <img className="aspect-square" src="photo.avif" alt="Foto de Samuel Sarmiento" />
+            <img className="h-full aspect-[3_/_4]" src="photo.avif" alt="Foto de Samuel Sarmiento" />
         </div>
     );
 };

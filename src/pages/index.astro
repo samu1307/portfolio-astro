@@ -5,35 +5,43 @@ import CardInfo from "../components/CardInfo.astro";
 import CardAboutMe from "../components/CardAboutMe.astro";
 import Proyects from "../components/Proyects.astro";
 import Me from "../components/Me.tsx";
+import ArrowsDev from "../components/svg/ArrowsDev.astro";
+import MusicNote from "../components/svg/MusicNote.astro";
+import Computer from "../components/svg/Computer.astro";
+import Skills from "../components/Skills.astro";
 
 const music = {
   skill: "Musico",
-  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
-}
+  description:
+    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
+};
 
-const design = {
+const tecnology = {
   skill: "Diseñador",
-  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
-}
+  description:
+    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
+};
 
 const dev = {
   skill: "Dev",
-  description: "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera."
-}
-
+  description:
+    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
+};
 ---
 
 <Layout title="Samuel Sarmiento - PORTFOLIO">
   <Nav />
 
-  <main class="">
-    <section class="px-20 mb-10 flex flex-row justify-around items-center">
+  <main>
+    <section
+      class="flex flex-col justify-between gap-10 px-5 lg:h-[65vh] lg:flex-row lg:px-20 mb-10"
+    >
       <CardInfo />
       <Me client:load />
     </section>
 
-    <section id="aboutMe"class="w-full h-[500px] -z-20 bg-eerie-black">
-      <main class="w-full h-[90vh] py-7 px-4 overflow-hidden sticky top-0 left-0">
+    <!-- <section id="aboutMe"class="w-full lg:h-[500px] -z-20 bg-eerie-black">
+      <main class="w-full lg:h-[90vh] py-7 px-4 overflow-hidden sticky top-0 left-0">
         <section class="scrollContainer w-fit h-[calc(500px_-_3.5rem)] flex items-center gap-16">
 
           <CardAboutMe class="text-flax" url="note.png" job={music}/>
@@ -42,12 +50,29 @@ const dev = {
           
         </section>
       </main>
+    </section> -->
+    <section id="aboutMe" class="w-full p-5 lg:h-[500px] -z-20 bg-eerie-black">
+      <h2 class="text-center text-xl text-alice-blue">Sobre Mi</h2>
+      <p class="text-gray-400">En esta sección te contare un poco mas sobre mis estudios, gustos, entre otras cosas, para conocernos mejor.</p>
+      <aside class="mt-5 flex flex-col gap-5">
+        <CardAboutMe class="text-blue-neon" job={dev}>
+          <ArrowsDev class="size-10 text-blue-neon"/>
+        </CardAboutMe>
+        <CardAboutMe class="text-flax" job={music}>
+          <MusicNote class="size-10 text-flax"/>
+        </CardAboutMe>
+        <CardAboutMe class="text-bitter-sweet" job={tecnology}>
+          <Computer class="size-10 text-bitter-sweet"/>
+        </CardAboutMe>
+      </aside>
     </section>
+
     <section id="proyects">
-      <Proyects/>
+      <Proyects />
     </section>
+
     <section id="skills">
-      
+      <Skills/>
     </section>
   </main>
 </Layout>
@@ -57,6 +82,10 @@ const dev = {
     animation: scroll linear both;
     animation-timeline: scroll(root block);
     animation-range: 75vh 95vh;
+  }
+
+  .grid-cols-edit {
+    grid-template-columns: minmax(0, 1fr) minmax(0, auto);
   }
 
   @keyframes scroll {

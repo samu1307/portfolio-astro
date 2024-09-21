@@ -1,0 +1,14 @@
+---
+interface CardSkill{
+    name: string
+}
+
+const { name } = Astro.props as CardSkill
+---
+
+<article class="w-24 py-3 px-2 bg-white bg-opacity-10 flex flex-col text-center rounded-lg">
+    <figure class="flex flex-col items-center gap-2">
+        <slot />
+        <figcaption class="text-gray-400 font-bold font-Inconsolata">{name}</figcaption>
+    </figure>
+</article>
