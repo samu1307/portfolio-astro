@@ -1,5 +1,10 @@
 ---
+import Clip from "./icons/Clip.astro";
+import Home from "./icons/Home.astro";
+import Grid from "./icons/Grid.astro";
 import MenuIcon from "./icons/MenuIcon.astro";
+import Panel from "./icons/Panel.astro";
+import MenuNav from "./MenuNav.tsx";
 ---
 
 <header class="p-5 lg:py-12 lg:px-20">
@@ -9,30 +14,64 @@ import MenuIcon from "./icons/MenuIcon.astro";
         <a href="/" class="font-Kanit font-bold text-xl text-blue-neon">
             SAMUEL✨
         </a>
-        <ul
-            class="w-full absolute border-2 border-blue-neon shadow-[0px_5px_0] p-7 gap-7 shadow-blue-neon grid grid-cols-2 bg-blue-neon top-16 left-0 rounded-lg z-20 lg:relative lg:flex flex-row lg:gap-4 font-kanit font-[300]"
-        >
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#aboutMe">Sobre mi</a></li>
-            <li><a href="#proyects">Proyectos</a></li>
-            <li><a href="#">Habilidades</a></li>
-        </ul>
-        <button>
-            <MenuIcon class="size-7 text-blue-neon font-bold" />
-        </button>
+        <MenuNav>
+            <li>
+                <a href="#home">
+                    <figure>
+                        <Home />
+                        <figcaption>Inicio</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="#aboutMe">
+                    <figure>
+                        <Clip />
+                        <figcaption>Sobre mí</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="#proyects">
+                    <figure>
+                        <Grid />
+                        <figcaption>Proyectos</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <figure>
+                        <Panel />
+                        <figcaption>Habilidades</figcaption>
+                    </figure>
+                </a>
+            </li>
+        </MenuNav>
     </nav>
 </header>
 
 <style>
-    ul {
-        li{
-            @apply flex items-center
-        }
+    li {
+        @apply flex items-center;
         a {
-            @apply w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue px-2 rounded-lg lg:border lg:border-transparent font-Onest;
+            @apply w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue p-5 rounded-lg lg:border lg:border-transparent font-Onest;
 
             &:hover {
                 @apply shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon;
+            }
+
+            figure {
+                @apply grid place-content-center text-center;
+            }
+
+            svg {
+                @apply z-20 text-blue-neon size-20;
+                filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+            }
+
+            figcaption {
+                @apply font-Onest font-medium;
             }
         }
     }
