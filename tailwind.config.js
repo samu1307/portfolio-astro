@@ -1,3 +1,5 @@
+import { postcss } from 'tailwindcss';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -24,7 +26,16 @@ export default {
       dropShadow: {
         "text-neon": "0 0 3px currentColor",
       },
+      classes: {
+        'aMenu' : "w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue p-5 rounded-lg lg:w-auto lg:px-2 lg:py-1 lg:shadow-none lg:border lg:border-transparent font-Onest",
+        'aMenuHover' : "shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon",
+        'svgMenu' : "lg:hidden z-20 text-blue-neon size-20 drop-shadow-[0_0_4px_rgba(0,0,0,0.5)]",
+        'figureMenu' : "grid place-content-center text-center",
+        'figcapMenu' : "font-Onest font-medium",
+      }
     },
   },
   plugins: [],
 };
+
+
