@@ -1,61 +1,29 @@
 ---
-import Clip from "./icons/Clip.astro";
-import Home from "./icons/Home.astro";
-import Grid from "./icons/Grid.astro";
-import MenuIcon from "./icons/MenuIcon.astro";
-import Panel from "./icons/Panel.astro";
 import MenuNav from "./MenuNav.tsx";
+import Clip from "./icons/Clip";
+import Home from "./icons/Home";
+import MenuIcon from "./icons/MenuIcon";
 ---
 
-<header class="p-5 lg:py-12 lg:px-20">
+<header class="p-5 sticky z-20 inset-0 lg:p-8 lg:pb-0 xl:py-12 xl:px-15">
     <nav
-        class="px-8 py-3 relative flex justify-between border-2 rounded-lg shadow-[0px_5px_0] bg-alice-blue border-blue-neon shadow-blue-neon"
+        class="px-8 py-3 overflow-x-clip overflow-y-visible relative flex justify-between border-2 rounded-lg shadow-[0px_5px_0] bg-alice-blue border-blue-neon shadow-blue-neon"
     >
-        <a href="/" class="font-Kanit font-bold text-xl text-blue-neon">
+        <a
+            href="/"
+            class="font-Kanit font-bold text-xl grid place-content-center text-blue-neon"
+        >
             SAMUEL✨
         </a>
-        <MenuNav>
-            <li>
-                <a href="#home">
-                    <figure>
-                        <Home />
-                        <figcaption>Inicio</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="#aboutMe">
-                    <figure>
-                        <Clip />
-                        <figcaption>Sobre mí</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="#proyects">
-                    <figure>
-                        <Grid />
-                        <figcaption>Proyectos</figcaption>
-                    </figure>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <figure>
-                        <Panel />
-                        <figcaption>Habilidades</figcaption>
-                    </figure>
-                </a>
-            </li>
-        </MenuNav>
+        <MenuNav client:load />
     </nav>
 </header>
 
 <style>
-    li {
+    /* li {
         @apply flex items-center;
         a {
-            @apply w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue p-5 rounded-lg lg:border lg:border-transparent font-Onest;
+            @apply ;
 
             &:hover {
                 @apply shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon;
@@ -66,13 +34,12 @@ import MenuNav from "./MenuNav.tsx";
             }
 
             svg {
-                @apply z-20 text-blue-neon size-20;
-                filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+                @apply lg:hidden z-20 text-blue-neon size-20 drop-shadow-[0_0_4px_rgba(0,0,0,0.5)];
             }
 
             figcaption {
                 @apply font-Onest font-medium;
             }
         }
-    }
+    } */
 </style>

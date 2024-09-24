@@ -17,7 +17,7 @@ const music = {
 };
 
 const tecnology = {
-  skill: "Diseñador",
+  skill: "Tegnologia",
   description:
     "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
 };
@@ -33,28 +33,18 @@ const dev = {
   <Nav />
 
   <main>
-    <section
-      class="flex flex-col justify-between gap-10 px-5 lg:h-[65vh] lg:flex-row lg:px-20 mb-10"
+    <section id="home" class="h-[450px] flex flex-col mb-10 justify-between gap-10 px-5 lg:p-8 lg:pb-0 lg:mb-6 lg:flex-row xl:px-15"
     >
       <CardInfo />
       <Me client:load />
     </section>
-
-    <!-- <section id="aboutMe"class="w-full lg:h-[500px] -z-20 bg-eerie-black">
-      <main class="w-full lg:h-[90vh] py-7 px-4 overflow-hidden sticky top-0 left-0">
-        <section class="scrollContainer w-fit h-[calc(500px_-_3.5rem)] flex items-center gap-16">
-
-          <CardAboutMe class="text-flax" url="note.png" job={music}/>
-          <CardAboutMe class="text-bitter-sweet" url="design.png" job={design}/>
-          <CardAboutMe class="text-blue-neon" url="code.png" job={dev}/>
-          
-        </section>
-      </main>
-    </section> -->
-    <section id="aboutMe" class="w-full p-5 lg:h-[500px] -z-20 bg-eerie-black">
+    <section id="proyects" class="bg-eerie-black">
+      <Proyects />
+    </section>
+    <section id="aboutMe" class="w-full p-5 flex items-center flex-col">
       <h2 class="text-center text-xl text-alice-blue">Sobre Mi</h2>
-      <p class="text-gray-400">En esta sección te contare un poco mas sobre mis estudios, gustos, entre otras cosas, para conocernos mejor.</p>
-      <aside class="mt-5 flex flex-col gap-5">
+      <p class="max-w-[60ch] text-gray-400 text-center">En esta sección te contare un poco mas sobre mis estudios, gustos, entre otras cosas, para conocernos mejor.</p>
+      <aside class="mt-5 flex flex-col lg:flex-row gap-5">
         <CardAboutMe class="text-blue-neon" job={dev}>
           <ArrowsDev class="size-10 text-blue-neon"/>
         </CardAboutMe>
@@ -67,9 +57,6 @@ const dev = {
       </aside>
     </section>
 
-    <section id="proyects">
-      <Proyects />
-    </section>
 
     <section id="skills">
       <Skills/>

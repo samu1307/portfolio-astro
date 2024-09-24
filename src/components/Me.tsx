@@ -8,7 +8,7 @@ const UserInfoCard: React.FC = () => {
     const openInfo = () => setIsOpen(!isOpen)
 
     return (
-        <div className="h-full rounded-3xl shadow-[0_5px_0] border-2 overflow-hidden relative bg-blue-neon shadow-blue-neon border-blue-neon">
+        <div className="h-full aspect-[3_/_4] rounded-3xl shadow-[0_5px_0] border-2 overflow-hidden relative bg-blue-neon shadow-blue-neon border-blue-neon">
             <div className={`${isOpen ? "-translate-y-[0]" : "-translate-y-[100%]"} w-full h-fit px-8 pt-6 flex flex-col items-center justify-end transition-transform duration-300 ease-in-out absolute top-0 left-0 bg-blue-neon`} >
                 <ul className="w-full text-alice-blue [&_span]:text-gray-400 flex flex-col gap-3">
                     <li>
@@ -49,7 +49,7 @@ const UserInfoCard: React.FC = () => {
                     </svg>
                 </button>
             </div>
-            <img className="h-full aspect-[3_/_4]" src="photo.avif" alt="Foto de Samuel Sarmiento" />
+            <img className="h-full aspect-[3_/_4] object-cover" src="photo.avif" alt="Foto de Samuel Sarmiento" />
         </div>
     );
 };

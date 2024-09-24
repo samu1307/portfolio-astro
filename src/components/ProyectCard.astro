@@ -24,7 +24,7 @@ const {
 <section
     class:list={[
         className +
-            " p-3 flex flex-col justify-between relative border border-black rounded-lg overflow-hidden",
+            " p-3 flex flex-col justify-between relative border bg-bg-eerie-black text-alice-blue border-eerie-black rounded-lg overflow-hidden",
     ]}
 >
     <header class="relative z-10">
@@ -57,6 +57,16 @@ const {
 
 <style>
     section {
+        position: relative;
+        /* background-image: url(gradient.png);
+        background-size: contain; */
+        &::before{
+            content: '';
+            position: absolute;
+            inset: -1000%;
+            z-index: -10;
+            background-image: url(gradient.png);
+        }
         header,
         footer > ul {
             transition: opacity 0.5s ease-in-out;

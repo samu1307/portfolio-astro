@@ -6,12 +6,12 @@ import Arrow from "./icons/Arrow.astro";
 ---
 
 <section
-    class="lg:max-w-[60%] h-fit z-10 px-8 py-8 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon relative"
+    class="max-w-[63%] h-full px-8 py-6 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon relative"
 >
     <Tittle client:load />
     <button
         id="btnAboutMe"
-        class="w-fit pl-3 pr-14 py-2 h-fit flex relative mt-8 mb-4 tracking-[.1rem] font-Inconsolata font-bold rounded-lg text-blue-neon border border-blue-neon"
+        class="size-fit pl-3 pr-14 py-2 relative mt-7 mb-5 tracking-[.07rem] font-Inconsolata font-bold text-xl rounded-lg text-blue-neon border border-blue-neon"
     >
         Contactame
         <span
@@ -22,10 +22,12 @@ import Arrow from "./icons/Arrow.astro";
     </button>
     <footer>
         <a href="#">
-            <Linkedin class="size-7" />
+            <Linkedin class="size-4" />
+            <span>LinkedIn</span>
         </a>
         <a href="#">
-            <Github class="size-8" />
+            <Github class="size-5" />
+            <span>GitHub</span>
         </a>
     </footer>
 </section>
@@ -42,15 +44,15 @@ import Arrow from "./icons/Arrow.astro";
             @apply shadow-none transition-[all_0.3s_ease-in-out_0s] translate-x-0;
 
             span {
-                @apply top-0 right-0 h-10 w-full transition-[all_0.2s_ease-in-out_0.2s];
+                @apply top-0 right-0 h-full w-full transition-[all_0.2s_ease-in-out_0.2s];
             }
         }
     }
 
     footer {
-        @apply flex flex-row gap-2;
+        @apply flex gap-3;
         a {
-            @apply text-blue-neon;
+            @apply rounded-2xl px-3 py-1 bg-blue-neon flex gap-2 items-center text-alice-blue;
             &:hover {
                 @apply scale-110;
             }
