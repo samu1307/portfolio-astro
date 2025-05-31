@@ -12,69 +12,73 @@ import SassSVG from "./svg/SassSVG.astro";
 import MySQLSVG from "./svg/MySQLSVG.astro";
 ---
 
-<article
-    class="w-full h-fit p-5 lg:py-8 lg:px-8 grid grid-rows-4 lg:grid-cols-3 lg:grid-rows-[repeat(4,minmax(120px,2fr))] gap-5 [&>picture]:rounded-xl [&>picture]:bg-blue-neon [&>picture>img]:w-full [&>picture>img]:h-full [&>picture>img]:border-2 [&>picture>img]:border-blue-neon [&>picture>img]:bg-white [&>picture>img]:rounded-lg [&>picture>img]:-translate-x-4 [&>picture>img]:-translate-y-4"
->
-    <ProyectCard
-        tittle="RUU | Control de refigerios"
-        description="Sistema de información para el manejo y control de los distintos refrigerios que llegan al colegio Rafael Uribe Uribe"
-        pathImg="ruu.png"
-        class="lg:col-span-2 lg:row-span-2"
-        primaryBtn="text-blue-ruu"
-        secondBtn="text-green-ruu"
-    >
-        <li><Html class="size-6" /></li>
-        <li><Css class="size-6" /></li>
-        <li><JS class="size-6" /></li>
-        <li><Php class="size-6" /></li>
-        <li><SassSVG class="size-6" /></li>
-        <li><MySQLSVG class="size-6" /></li>
-    </ProyectCard>
+<section class="w-full overflow-x-scroll lg:overflow-hidden lg:py-8 lg:px-8">
+    <div class="w-[360%] lg:w-full h-fit p-5 flex gap-5 lg:flex-col lg:gap-11">
+        <ProyectCard
+            tittle="RUU | Control de refigerios"
+            description="Sistema de información para el manejo y control de los distintos refrigerios que llegan al colegio Rafael Uribe Uribe"
+            pathImg="ruu.webp"
+            class=""
+            primaryBtn="text-blue-ruu"
+            secondBtn="text-green-ruu"
+        >
+            <li>
+                <Html class="size-5" />
+            </li>
+            <li>
+                <Css class="size-6" />
+            </li>
+            <li>
+                <JS class="size-6" />
+            </li>
+            <li>
+                <Php class="size-6" />
+            </li>
+            <li>
+                <SassSVG class="size-6" />
+            </li>
+            <li>
+                <MySQLSVG class="size-6" />
+            </li>
+        </ProyectCard>
 
-    <ProyectCard
-        tittle="Edit.code"
-        description="Editor de codigo web online con diversas funcionalidades"
-        pathImg="photo.avif"
-        class="lg:col-start-3 lg:col-end-3 lg:row-span-2"
-        primaryBtn="text-red-ruu"
-        secondBtn="text-green-ruu"
-    >
-        <li><Html class="size-6" /></li>
-        <li><Css class="size-6" /></li>
-        <li><JS class="size-6" /></li>
-        <li><React class="size-6" /></li>
-        <li><Node class="size-6" /></li>
-        <li><AstroIcon class="size-6" /></li>
-        <li><Tailwind class="size-6" /></li>
-        <li><Php class="size-6" /></li>
-    </ProyectCard>
+        <ProyectCard
+            tittle="Edit.code"
+            description="Editor de codigo web online con diversas funcionalidades"
+            pathImg="edit-code.webp"
+            class=""
+            primaryBtn="text-red-ruu"
+            secondBtn="text-green-ruu"
+        >
+            <li><Html class="size-6" /></li>
+            <li><Css class="size-6" /></li>
+            <li><JS class="size-6" /></li>
+            <li><React class="size-6" /></li>
+            <li><AstroIcon class="size-6" /></li>
+            <li><Tailwind class="size-6" /></li>
+        </ProyectCard>
 
-    <ProyectCard
-        tittle="Calculadora"
-        description="Calculadora en linea"
-        pathImg="calculator.png"
-        class="lg:col-start-1 lg:col-end-2 lg:row-span-2"
-        primaryBtn="text-violet-calculator"
-        secondBtn="text-red-calculator"
-    >
-        <li><Html class="size-6" /></li>
-        <li><Css class="size-6" /></li>
-        <li><JS class="size-6" /></li>
-        <li><React class="size-6" /></li>
-        <li><Tailwind class="size-6" /></li>
-        <li><AstroIcon class="size-6" /></li>
-    </ProyectCard>
+        <ProyectCard
+            tittle="Triqui Neón"
+            description="Triqui o tres en raya online neon."
+            pathImg="triqui.webp"
+            class=""
+            primaryBtn="text-red-triqui"
+            secondBtn="text-blue-triqui"
+        >
+            <li><Html class="size-6" /></li>
+            <li><Css class="size-6" /></li>
+            <li><JS class="size-6" /></li>
+        </ProyectCard>
+    </div>
+</section>
 
-    <ProyectCard
-        tittle="Triqui Neón"
-        description="Triqui o tres en raya online neon."
-        pathImg="triqui.jpg"
-        class="lg:col-start-2 lg:col-end-4 lg:row-span-2"
-        primaryBtn="text-red-triqui"
-        secondBtn="text-blue-triqui"
-    >
-        <li><Html class="size-6" /></li>
-        <li><Css class="size-6" /></li>
-        <li><JS class="size-6" /></li>
-    </ProyectCard>
-</article>
+<style>
+    li {
+        span{
+            @apply flex gap-2 py-1 px-3 rounded-full;
+            label{ @apply text-alice-blue font-semibold font-Onest text-sm;}
+            svg { @apply size-5;}
+        }
+    }
+</style>

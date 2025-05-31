@@ -1,12 +1,9 @@
 ---
-type job = {
-    skill: string;
-    description: string;
-};
+import type { SkillItem } from "../lib/types/skills";
 
 interface Props {
     class: string;
-    job: job;
+    job: SkillItem;
 }
 
 const {
@@ -15,19 +12,14 @@ const {
 } = Astro.props;
 ---
 
-<article
-    class:list={[
-        className,
-        "bg-alice-blue bg-opacity-10 p-5 flex flex-col items-center rounded-lg",
-    ]}
->
-    <picture class="size-fit grid place-content-center">
+<div class={className + "  rounded-lg shadow-card p-6 transition-all duration-300 hover:shadow-hover bg-white border-l-4 border-current hover:translate-y-[-5px]"}>  
+    <div
+        class="w-12 h-12 bg-current rounded-lg flex items-center justify-center mb-4"
+    >
         <slot />
-    </picture>
-    <h3 class="font-bold font-Inconsolata text-3xl">
-        {skill}
-    </h3>
-    <p class="text-lg leading-6 text-gray-400">
+    </div>
+    <h3 class="text-xl font-semibold mb-2">{skill}</h3>
+    <p class="text-gray-600">
         {description}
     </p>
-</article>
+</div>

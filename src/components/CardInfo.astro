@@ -2,66 +2,55 @@
 import Tittle from "./Tittle.tsx";
 import Github from "./icons/Github.astro";
 import Linkedin from "./icons/Linkedin.astro";
-import Arrow from "./icons/Arrow.astro";
+import ButtonContact from "./ButtonContact.astro";
+import TypeAnimationBlock from "./TypeAnimationBlock";
 ---
 
-<section
-    class="max-w-[63%] h-full px-8 py-6 bg-flax border-2 border-blue-neon rounded-xl shadow-[0_5px_0] shadow-blue-neon relative"
->
-    <Tittle client:load />
-    <button
-        id="btnAboutMe"
-        class="size-fit pl-3 pr-14 py-2 relative mt-7 mb-5 tracking-[.07rem] font-Inconsolata font-bold text-xl rounded-lg text-blue-neon border border-blue-neon"
-    >
-        Contactame
-        <span
-            class="size-9 absolute top-1 right-1 rounded-lg grid place-content-center bg-blue-neon"
+<article class="order-2 md:order-1 card bg-amber-50 p-8 border-blue-dark shadow-card">
+    <header>
+      <h2 class="text-xl md:text-2xl font-medium text-gray-600 mb-2">
+        ¡Hola! 👋
+      </h2>
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-dark mb-3"
+      >
+        Soy <span class="text-blue-dark">Samuel</span>
+      </h1>
+    </header>
+    <div class="text-xl md:text-2xl font-medium text-gray-600 mb-6 h-8">
+      <TypeAnimationBlock client:load />
+    </div>
+    <p class="text-gray-600 mb-8">
+      Desarrollador web apasionado por crear experiencias digitales atractivas y
+      funcionales. Combino mi amor por el código 💻 con mi pasión por la música
+      🎶 para dar vida a proyectos creativos.
+    </p>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <ButtonContact />
+      <div class="flex gap-3">
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
         >
-            <Arrow class="size-7 text-white" />
-        </span>
-    </button>
-    <footer>
-        <a href="#">
-            <Linkedin class="size-4" />
-            <span>LinkedIn</span>
+          <Linkedin class="size-5" />
         </a>
-        <a href="#">
-            <Github class="size-5" />
-            <span>GitHub</span>
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="social-icon"
+        >
+          <Github class="size-5" />
         </a>
-    </footer>
-</section>
+      </div>
+    </div>
+</article>
 
 <style>
-    #btnAboutMe {
-        @apply shadow-[-3px_3px_0_2px_currentColor] translate-x-1 -translate-y-1 transition-[all_0.3s_ease-in-out_0.2s];
-
-        span {
-            @apply h-[calc(100%_-_0.5rem)] transition-[all_0.2s_ease-in-out_0s];
-        }
-
-        &:hover {
-            @apply shadow-none transition-[all_0.3s_ease-in-out_0s] translate-x-0;
-
-            span {
-                @apply top-0 right-0 h-full w-full transition-[all_0.2s_ease-in-out_0.2s];
-            }
-        }
-    }
-
-    footer {
-        @apply flex gap-3;
-        a {
-            @apply rounded-2xl px-3 py-1 bg-blue-neon flex gap-2 items-center text-alice-blue;
-            &:hover {
-                @apply scale-110;
-            }
-        }
-    }
-
-    form{
-        input{
-            @apply w-full px-3 py-2 rounded-lg outline-none;
-        }
-    }
+  .social-icon {
+    @apply size-10 flex items-center justify-center bg-blue-950 text-white rounded-full 
+    hover:bg-blue-600 transition-all duration-300;
+  }
 </style>

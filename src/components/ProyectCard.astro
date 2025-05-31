@@ -17,104 +17,70 @@ const {
     description: des,
     pathImg,
     primaryBtn,
-    secondBtn
+    secondBtn,
 } = Astro.props;
 ---
 
-<section
+<article
     class:list={[
         className +
-            " p-3 flex flex-col justify-between relative border bg-bg-eerie-black text-alice-blue border-eerie-black rounded-lg overflow-hidden",
+            "w-1/4 lg:w-full flex flex-col lg:flex-row gap-5 lg:gap-20 justify-between bg-opacity-15 overflow-hidden rounded-xl border border-opacity-15 border-alice-blue text-alice-blue bg-alice-blue lg:rounded-none lg:border-none lg:bg-transparent",
     ]}
 >
-    <header class="relative z-10">
-        <h3 class="mb-2 text-lg font-bold">
+    <picture class="aspect-[16_/_9] w-full max-w-[550px] max-h-[350px] overflow-hidden bg-no-repeat bg-center lg:rounded-lg lg:border lg:border-alice-blue lg:border-opacity-20">
+        <img
+            class="translate-x-8 translate-y-8 lg:translate-x-14 lg:translate-y-14 rounded-md"
+            src={pathImg}
+            alt=""
+        />
+    </picture>
+    <section class="flex flex-col lg:justify-center p-5 lg:w-1/2">
+        <h3 class="mb-3 text-xl font-bold">
             {tittle}
         </h3>
-        <p class="w-[20ch] leading-5">{des}</p>
-    </header>
-    <picture class="w-full absolute inset-0">
-        <img class="w-full rounded-lg" src={pathImg} alt="" />
-    </picture>
-    <footer
-        class="w-full flex flex-row flex-wrap gap-2 justify-between items-center relative z-10"
-    >
-        <ul class="flex flex-row gap-1">
+        <ul class="flex gap-2 flex-wrap mb-3">
             <slot />
         </ul>
-        <div class="flex flex-row gap-2">
+        <p class="mb-3">{des}</p>
+        <div class="flex flex-row gap-4">
             <a class:list={[primaryBtn]} href="#">
-                <span>Code</span>
                 <Github />
+                <span>Code</span>
             </a>
             <a class:list={[secondBtn]} href="#">
-                <span>Visitar</span>
                 <ArrowFrom />
+                <span>Visitar</span>
             </a>
         </div>
-    </footer>
-</section>
+    </section>
+</article>
 
 <style>
-    section {
-        position: relative;
-        /* background-image: url(gradient.png);
-        background-size: contain; */
-        &::before{
-            content: '';
-            position: absolute;
-            inset: -1000%;
-            z-index: -10;
-            background-image: url(gradient.png);
-        }
-        header,
-        footer > ul {
-            transition: opacity 0.5s ease-in-out;
-        }
-        &:hover {
-            header,
-            footer > ul {
-                opacity: 0;
-            }
-            picture {
-                transform: skew(0deg) translate(0, 0);
-            }
-        }
-    }
-
     ul {
-        svg:hover {
-            @apply scale-110;
+        span:hover {
+            @apply scale-105;
         }
     }
 
     picture {
-        transition:
-        transform 0.4s ease-in-out,
-        width 0.4s ease-in-out,
-        box-shadow .4s ease-in-out;
-        transform: skew(30deg, -10deg) scaleY(.5)  translate(40%, 10%);
+        background-image: url(gradient.png);
+        background-size: 150%;
         img{
-            filter: drop-shadow(-60px 140px 30px rgba(0, 0, 0, 0.4));
+            transition: transform .3s ease-in-out;
+        }
+        &:hover{
+            img{
+                /* transform:  */
+                @apply translate-x-5 translate-y-5;
+            }
         }
     }
 
-    div {
-        a {
-            @apply w-fit px-4 py-1 backdrop-blur-sm relative overflow-hidden flex items-center shadow-[0_0_10px] flex-row gap-2 border border-current rounded-lg bg-current;
+    a {
+        @apply w-fit px-4 py-1 flex items-center gap-2 border border-alice-blue rounded-lg;
 
-            span,
-            svg {
-                @apply z-10 text-white; 
-            }
-
-            svg {
-                @apply size-4;
-            }
-
-            &:hover {
-                filter: brightness(1.5);
-            }
-        }
+        span,svg {@apply z-10 text-alice-blue;}
+        svg {@apply size-5;}
+        &:hover {@apply bg-neutral-500}
     }
 </style>

@@ -4,62 +4,60 @@ import Nav from "../components/Nav.astro";
 import CardInfo from "../components/CardInfo.astro";
 import CardAboutMe from "../components/CardAboutMe.astro";
 import Proyects from "../components/Proyects.astro";
-import Me from "../components/Me.tsx";
-import ArrowsDev from "../components/svg/ArrowsDev.astro";
-import MusicNote from "../components/svg/MusicNote.astro";
-import Computer from "../components/svg/Computer.astro";
+import Me from "../components/Me.astro";
 import Skills from "../components/Skills.astro";
-
-const music = {
-  skill: "Musico",
-  description:
-    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
-};
-
-const tecnology = {
-  skill: "Tegnologia",
-  description:
-    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
-};
-
-const dev = {
-  skill: "Dev",
-  description:
-    "Se refiere a una secuencia de trabajos relacionados que una persona tiene a lo largo de su vida. Implica un desarrollo profesional y un avance en la carrera.",
-};
+import { SKILLS_INFO } from "../lib/data/aboutMe.astro";
+import type { SkillItem } from "../lib/types/skills";
+import LucideIcon, { type LucideIconName } from "../components/icons/LucideIcon.tsx";
 ---
 
 <Layout title="Samuel Sarmiento - PORTFOLIO">
   <Nav />
 
   <main>
-    <section id="home" class="h-[450px] flex flex-col mb-10 justify-between gap-10 px-5 lg:p-8 lg:pb-0 lg:mb-6 lg:flex-row xl:px-15"
+    <section
+      id="home"
+      class="pt-28 pb-16 px-4 md:px-0 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center"
     >
       <CardInfo />
-      <Me client:load />
+      <Me />
     </section>
-    <section id="proyects" class="bg-eerie-black">
+    <section id="proyects" class="bg-eerie-black pt-7">
+      <h2 class="text-alice-blue text-2xl font-Onest text-center">Proyectos</h2>
       <Proyects />
     </section>
-    <section id="aboutMe" class="w-full p-5 flex items-center flex-col">
-      <h2 class="text-center text-xl text-alice-blue">Sobre Mi</h2>
-      <p class="max-w-[60ch] text-gray-400 text-center">En esta sección te contare un poco mas sobre mis estudios, gustos, entre otras cosas, para conocernos mejor.</p>
-      <aside class="mt-5 flex flex-col lg:flex-row gap-5">
-        <CardAboutMe class="text-blue-neon" job={dev}>
-          <ArrowsDev class="size-10 text-blue-neon"/>
-        </CardAboutMe>
-        <CardAboutMe class="text-flax" job={music}>
-          <MusicNote class="size-10 text-flax"/>
-        </CardAboutMe>
-        <CardAboutMe class="text-bitter-sweet" job={tecnology}>
-          <Computer class="size-10 text-bitter-sweet"/>
-        </CardAboutMe>
-      </aside>
+    <section id="about" class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-blue-dark mb-4">
+            Sobre Mí
+          </h2>
+          <p class="text-gray-500 max-w-2xl mx-auto">
+            Conozca un poco más sobre mi pasión y experiencia en diferentes áreas
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          {
+            SKILLS_INFO.map((skill: SkillItem) => {
+              return (
+                <CardAboutMe class={skill.color.dark} job={skill}>
+                  <LucideIcon
+                    client:load
+                    name={skill.iconName as LucideIconName}
+                    size={24}
+                    className={skill.color.light}
+                  />
+                </CardAboutMe>
+              );
+            })
+          }
+        </div>
+      </div>
     </section>
 
-
     <section id="skills">
-      <Skills/>
+      <Skills />
     </section>
   </main>
 </Layout>

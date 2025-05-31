@@ -1,12 +1,16 @@
 ---
-import MenuNav from "./MenuNav.tsx";
-import Clip from "./icons/Clip";
-import Home from "./icons/Home";
-import MenuIcon from "./icons/MenuIcon";
+import ButtonContact from "./ButtonContact.astro";
+
+const NAV_INFO = [
+    { name: "inicio", href: "#home" },
+    { name: "Sobre Mí", href: "#aboutme" },
+    { name: "Proyectos", href: "#proyects" },
+    { name: "Habilidades", href: "#skills" },
+];
 ---
 
 <header class="p-5 sticky z-20 inset-0 lg:p-8 lg:pb-0 xl:py-12 xl:px-15">
-    <nav
+    <!-- <nav
         class="px-8 py-3 overflow-x-clip overflow-y-visible relative flex justify-between border-2 rounded-lg shadow-[0px_5px_0] bg-alice-blue border-blue-neon shadow-blue-neon"
     >
         <a
@@ -16,30 +20,23 @@ import MenuIcon from "./icons/MenuIcon";
             SAMUEL✨
         </a>
         <MenuNav client:load />
+    </nav> -->
+    <nav
+        class="flex items-center justify-between bg-white border-2 border-blue-900 rounded-lg mx-4 mt-4 px-5 py-4"
+    >
+        <div class="text-2xl font-bold text-blue-900 font-sans">SAMUEL✨</div>
+        <div class="hidden md:flex items-center space-x-4">
+            {
+                NAV_INFO.map((ankor) => (
+                    <a
+                        href={ankor.href}
+                        class="px-3 py-2 rounded-md text-blue-900 hover:bg-blue-50 transition-all duration-300"
+                    >
+                        {ankor.name}
+                    </a>
+                ))
+            }
+            <ButtonContact />
+        </div>
     </nav>
 </header>
-
-<style>
-    /* li {
-        @apply flex items-center;
-        a {
-            @apply ;
-
-            &:hover {
-                @apply shadow-[1.5px_1.5px_0] bg-flax border-blue-neon shadow-blue-neon;
-            }
-
-            figure {
-                @apply grid place-content-center text-center;
-            }
-
-            svg {
-                @apply lg:hidden z-20 text-blue-neon size-20 drop-shadow-[0_0_4px_rgba(0,0,0,0.5)];
-            }
-
-            figcaption {
-                @apply font-Onest font-medium;
-            }
-        }
-    } */
-</style>

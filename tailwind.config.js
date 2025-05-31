@@ -17,6 +17,7 @@ export default {
         "violet-calculator": "#383961",
 				'blue-ruu': '#1E222F',
 				'green-ruu': '#4AA163',
+        'blue-dark': '#0F3460',
       },
       fontFamily: {
         Inconsolata: "'Inconsolata Variable', sans-serif",
@@ -25,6 +26,8 @@ export default {
       },
       dropShadow: {
         "text-neon": "0 0 3px currentColor",
+        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
       },
       classes: {
         'aMenu' : "w-full aspect-square shadow-lg lg:aspect-auto bg-alice-blue p-5 rounded-lg lg:w-auto lg:px-2 lg:py-1 lg:shadow-none lg:border lg:border-transparent font-Onest",

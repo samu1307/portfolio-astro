@@ -1,0 +1,42 @@
+---
+import LucideIcon, { type LucideIconName } from "./icons/LucideIcon";
+
+const { class: className = "" } = Astro.props;
+---
+
+<button
+    id="btnAboutMe"
+    class={"size-fit pl-3 pr-14 py-2 relative tracking-[.07rem] font-Inconsolata font-bold text-xl rounded-lg text-blue-neon border border-blue-neon " +
+        className}
+>
+    Contáctame
+    <span
+        class="size-9 absolute top-1 right-1 rounded-lg grid place-content-center bg-blue-neon"
+    >
+        <LucideIcon
+            client:load
+            name={"arrowRight" as LucideIconName}
+            size={24}
+            className="text-blue-100"
+        />
+    </span>
+</button>
+
+<style>
+    button {
+        span {
+            transition:
+                    right 0.1s,
+                    top 0.2s ,
+                    bottom 0.2s,
+                    width 0.2s,
+                    height 0.2s;
+            
+        }
+        &:hover {
+            span {
+                @apply w-full h-full top-0 right-0 bottom-0;
+            }
+        }
+    }
+</style>
